@@ -13,22 +13,22 @@ export async function GET(request) {
       (
         <div
           style={{
-            background: "linear-gradient(to bottom right, #FF6B6B, #4ECDC4)",
+            background: "black",
             width: "100%",
             height: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            color: "white",
           }}
         >
           <div
             style={{
               fontSize,
               fontWeight: "bold",
-              color: "white",
               textAlign: "center",
-              textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+              marginBottom: 20,
             }}
           >
             Weird Web October
@@ -36,33 +36,17 @@ export async function GET(request) {
           <div
             style={{
               fontSize: fontSize / 2,
-              color: "white",
-              marginTop: 20,
-              textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+              marginBottom: 40,
             }}
           >
             v0 Edition
           </div>
-          {/* Cute background elements */}
           <div
             style={{
-              position: "absolute",
-              top: 20,
-              left: 20,
               fontSize: 100,
             }}
           >
-            🌈
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: 20,
-              right: 20,
-              fontSize: 100,
-            }}
-          >
-            🦄
+            💅
           </div>
         </div>
       ),
