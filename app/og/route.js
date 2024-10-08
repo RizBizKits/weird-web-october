@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(request: NextRequest) {
+export async function GET(request) {
   try {
     const fontSize = 64;
     const width = 1200;
@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
         height,
       }
     );
-  } catch (e: any) {
+  } catch (e) {
     console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
