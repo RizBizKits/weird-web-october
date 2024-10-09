@@ -18,11 +18,6 @@ export default function WeirdWebOctober() {
     setTextColor(getRandomColor(70, 30));
   }, []);
 
-  const today = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   return (
     <div
@@ -69,10 +64,20 @@ export default function WeirdWebOctober() {
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
               >
-                Hashtags [{today}]
+                Hashtags [08/10/2024]
               </span>
             </Link>
+           
           </li>
+          <li className="text-lg font-medium"> <Link href="/blessings" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                Blessings [09/10/2024]
+              </span>
+            </Link>
+            </li>
         </ul>
       </div>
 
