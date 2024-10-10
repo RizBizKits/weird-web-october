@@ -4,6 +4,7 @@ import React, { useState, useRef, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import html2canvas from 'html2canvas'
 
+
 export default function DolphinPaint() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isDrawing, setIsDrawing] = useState(false)
@@ -275,7 +276,15 @@ export default function DolphinPaint() {
         }
 
         .safe-area-bottom {
-          padding-bottom: max(1rem, var(--sab));
+          padding-bottom: max(4rem, calc(1rem + var(--sab)));
+        }
+
+        .canvas-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 4rem;
         }
       `}</style>
       <button
@@ -285,10 +294,15 @@ export default function DolphinPaint() {
       >
         SAVE ART
       </button>
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full"
-      />
+      <div className="canvas-container">
+        <canvas
+          ref={canvasRef}
+          className="absolute top-0 left-0 w-full h-full"
+        />
+      </div>
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center items-center z-20 safe-area-bottom bg-parchment">
+        <h2 className="artiste-text text-4xl rainbow-text">I AM ARTISTE</h2>
+      </div>
       <div
         id="dolphin-brush"
         ref={dragRef}
@@ -316,14 +330,11 @@ export default function DolphinPaint() {
           draggable={false}
         />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center z-20 safe-area-bottom">
-        <h2 className="artiste-text text-4xl rainbow-text">I AM ARTISTE</h2>
-      </div>
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
             <h3>YOU ARE ARTISTE</h3>
-            <p>You should save your dolphin art:</p>
+            <p>You should save your dolphin art.</p>
             <div className="modal-buttons">
               <button className="modal-button confirm-button" onClick={handleConfirmSave}>OMG yes</button>
               <button className="modal-button cancel-button" onClick={handleCancelSave}>OMG but wait</button>
