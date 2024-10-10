@@ -200,6 +200,13 @@ export default function DolphinPaint() {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 
+        :root {
+          --sat: env(safe-area-inset-top);
+          --sar: env(safe-area-inset-right);
+          --sab: env(safe-area-inset-bottom);
+          --sal: env(safe-area-inset-left);
+        }
+
         * {
           -webkit-tap-highlight-color: transparent;
         }
@@ -266,6 +273,10 @@ export default function DolphinPaint() {
           background-color: #f44336;
           color: white;
         }
+
+        .safe-area-bottom {
+          padding-bottom: max(1rem, var(--sab));
+        }
       `}</style>
       <button
         id="save-art-button"
@@ -305,7 +316,7 @@ export default function DolphinPaint() {
           draggable={false}
         />
       </div>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center z-20">
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center z-20 safe-area-bottom">
         <h2 className="artiste-text text-4xl rainbow-text">I AM ARTISTE</h2>
       </div>
       {showModal && (
