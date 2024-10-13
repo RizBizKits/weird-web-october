@@ -101,7 +101,7 @@ export default function WeirdWebOctober() {
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
               >
-                GIFs [14/10/2024]
+                GIFs [13/10/2024]
               </span>
             </Link>
             </li>
