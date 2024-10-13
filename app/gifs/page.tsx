@@ -1,14 +1,17 @@
 "use client"
 
 import { useRef, useState, useEffect } from "react"
-import { Canvas, useFrame, useThree } from "@react-three/fiber"
+import { Canvas, useFrame, useThree, ThreeEvent } from "@react-three/fiber"
 import { Box, OrbitControls, Sphere, Html, PerspectiveCamera } from "@react-three/drei"
 import * as THREE from "three"
 import { Anton } from 'next/font/google'
 
 const anton = Anton({ weight: '400', subsets: ['latin'] })
 
-const catGifs = [ "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif", "https://media.giphy.com/media/puYCXadOGhphDrewiv/giphy.gif", "https://media.giphy.com/media/8vQSQ3cNXuDGo/giphy.gif", "https://media.giphy.com/media/W920wi2GVMv96/giphy.gif" ]
+const catGifs = [
+  "https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif",
+  "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+]
 
 function GiftBoxWithRibbon() {
   const [isLidOpen, setIsLidOpen] = useState(false)
@@ -47,7 +50,7 @@ function GiftBoxWithRibbon() {
     groupRef.current.rotation.y += 0.005
   })
 
-  const handleClick = (event: THREE.Event) => {
+  const handleClick = (event: ThreeEvent<MouseEvent>) => {
     event.stopPropagation()
     setIsLidOpen(!isLidOpen)
   }
@@ -334,26 +337,34 @@ function GiftBoxWithRibbon() {
   )
 }
 
+function Scene() {
+  return (
+    <>
+      <PerspectiveCamera makeDefault position={[0, 2, 5]} fov={60} />
+      <color attach="background" args={["#1a1a1a"]} />
+      <ambientLight intensity={0.7} />
+      <pointLight position={[10, 10, 10]} intensity={1} castShadow />
+      <GiftBoxWithRibbon />
+      <OrbitControls 
+        enablePan={false} 
+        enableZoom={true}
+        maxDistance={10}
+        minDistance={3}
+        target={[0, 0.5, 0]}
+      />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.6, 0]} receiveShadow>
+        <planeGeometry args={[10, 10]} />
+        <shadowMaterial transparent opacity={0.4} />
+      </mesh>
+    </>
+  )
+}
+
 export default function Component() {
   return (
     <div className="w-full h-screen bg-gray-900 relative">
       <Canvas shadows>
-        <PerspectiveCamera makeDefault position={[0, 2, 5]} fov={60} />
-        <color attach="background" args={["#1a1a1a"]} />
-        <ambientLight intensity={0.7} />
-        <pointLight position={[10, 10, 10]} intensity={1} castShadow />
-        <GiftBoxWithRibbon />
-        <OrbitControls 
-          enablePan={false} 
-          enableZoom={true}
-          maxDistance={10}
-          minDistance={3}
-          target={[0, 0.5, 0]}
-        />
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.6, 0]} receiveShadow>
-          <planeGeometry args={[10, 10]} />
-          <shadowMaterial transparent opacity={0.4} />
-        </mesh>
+        <Scene />
       </Canvas>
       <div className="absolute bottom-0 left-0 w-full text-center pb-4 sm:pb-[50px]">
         <h1 className={`text-2xl sm:text-4xl font-bold text-yellow-400 ${anton.className}`}>The Gif(t) Box</h1>
