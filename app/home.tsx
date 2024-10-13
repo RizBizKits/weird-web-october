@@ -96,6 +96,15 @@ export default function WeirdWebOctober() {
               </span>
             </Link>
             </li>
+            <li className="text-lg font-medium"> <Link href="/gifs" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                GIFs [14/10/2024]
+              </span>
+            </Link>
+            </li>
         </ul>
       </div>
 
