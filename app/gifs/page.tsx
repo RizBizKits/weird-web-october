@@ -6,7 +6,12 @@ import { Box, OrbitControls, Sphere, Html, PerspectiveCamera } from "@react-thre
 import * as THREE from "three"
 import { Anton } from 'next/font/google'
 
-const anton = Anton({ weight: '400', subsets: ['latin'] })
+const anton = Anton({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+})
 
 const catGifs = [ "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif", "https://media.giphy.com/media/puYCXadOGhphDrewiv/giphy.gif", "https://media.giphy.com/media/8vQSQ3cNXuDGo/giphy.gif", "https://media.giphy.com/media/W920wi2GVMv96/giphy.gif" ]
 
@@ -364,7 +369,7 @@ export default function Component() {
         <Scene />
       </Canvas>
       <div className="absolute bottom-0 left-0 w-full text-center pb-4 sm:pb-[50px]">
-        <h1 className={`text-2xl sm:text-4xl font-bold text-yellow-400 ${anton.className}`}>The Gif(t) Box</h1>
+        <h1 className={`text-2xl sm:text-4xl font-bold text-yellow-400 ${anton.className}`} style={{ fontFamily: "'Anton', sans-serif" }}>The Gif(t) Box</h1>
       </div>
     </div>
   )
