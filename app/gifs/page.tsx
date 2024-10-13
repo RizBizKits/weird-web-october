@@ -8,10 +8,7 @@ import { Anton } from 'next/font/google'
 
 const anton = Anton({ weight: '400', subsets: ['latin'] })
 
-const catGifs = [
-  "https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif",
-  "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-]
+const catGifs = [ "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif", "https://media.giphy.com/media/puYCXadOGhphDrewiv/giphy.gif", "https://media.giphy.com/media/8vQSQ3cNXuDGo/giphy.gif", "https://media.giphy.com/media/W920wi2GVMv96/giphy.gif" ]
 
 function GiftBoxWithRibbon() {
   const [isLidOpen, setIsLidOpen] = useState(false)
