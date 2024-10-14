@@ -133,7 +133,7 @@ export default function Component() {
               '--finalX': `${particle.finalX - particle.x}px`,
               '--finalY': `${particle.finalY - particle.y}px`,
               letterSpacing: "1px",
-            }}
+            } as React.CSSProperties}
           >
             {particle.char}
           </text>
