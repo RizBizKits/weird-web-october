@@ -137,6 +137,14 @@ export default function WeirdWebOctober() {
                 Words [18/10/2024]
               </span>
             </Link>
+            </li><li className="text-lg font-medium"> <Link href="/data" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                Data [19/10/2024]
+              </span>
+            </Link>
             </li>
         </ul>
       </div>
