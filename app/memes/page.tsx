@@ -61,20 +61,21 @@ export default function AnimatedTextWithBackground() {
   const [textAnimationComplete, setTextAnimationComplete] = useState(false);
 
   useEffect(() => {
-    const font = new FontFace(
-      "Eagle Lake",
-      "url(https://fonts.gstatic.com/s/eaglelake/v20/ptRMTiqc4ouSzDjafLJh5OPk.woff2)"
-    );
-    font
-      .load()
-      .then(() => {
+    const loadFont = async () => {
+      const font = new FontFace(
+        "Eagle Lake",
+        "url(https://fonts.gstatic.com/s/eaglelake/v20/ptRMTiqc4ouSzDjafLJh5OPk.woff2)"
+      );
+      try {
+        await font.load();
         document.fonts.add(font);
         setFontLoaded(true);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Failed to load Eagle Lake font:", err);
         setFontLoaded(true); // Proceed with fallback font
-      });
+      }
+    };
+    loadFont();
   }, []);
 
   useEffect(() => {
@@ -143,6 +144,8 @@ export default function AnimatedTextWithBackground() {
         <span className="sr-only">{text}</span>
       </div>
       <style jsx>{`
+        @import url("https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap");
+
         @keyframes write {
           0% {
             opacity: 0;
