@@ -18,7 +18,6 @@ export default function WeirdWebOctober() {
     setTextColor(getRandomColor(70, 30));
   }, []);
 
-
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-between p-4 transition-colors duration-500"
@@ -67,9 +66,10 @@ export default function WeirdWebOctober() {
                 Hashtags [08/10/2024]
               </span>
             </Link>
-           
           </li>
-          <li className="text-lg font-medium"> <Link href="/blessed" passHref>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/blessed" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -77,8 +77,10 @@ export default function WeirdWebOctober() {
                 Blessed [09/10/2024]
               </span>
             </Link>
-            </li>
-            <li className="text-lg font-medium"> <Link href="/art" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/art" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -86,8 +88,10 @@ export default function WeirdWebOctober() {
                 Art [10/10/2024]
               </span>
             </Link>
-            </li>
-             <li className="text-lg font-medium"> <Link href="/api" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/api" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -95,8 +99,10 @@ export default function WeirdWebOctober() {
                 API [11/10/2024]
               </span>
             </Link>
-            </li>
-            <li className="text-lg font-medium"> <Link href="/gifs" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/gifs" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -104,8 +110,10 @@ export default function WeirdWebOctober() {
                 GIFs [13/10/2024]
               </span>
             </Link>
-            </li>
-            <li className="text-lg font-medium"> <Link href="/history" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/history" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -113,7 +121,10 @@ export default function WeirdWebOctober() {
                 History [14/10/2024]
               </span>
             </Link>
-            </li> <li className="text-lg font-medium"> <Link href="/audio" passHref>
+          </li>{" "}
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/audio" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -121,7 +132,10 @@ export default function WeirdWebOctober() {
                 Audio [15/10/2024]
               </span>
             </Link>
-            </li><li className="text-lg font-medium"> <Link href="/social" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/social" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -129,7 +143,10 @@ export default function WeirdWebOctober() {
                 Social [16/10/2024]
               </span>
             </Link>
-            </li><li className="text-lg font-medium"> <Link href="/words" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/words" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -137,7 +154,10 @@ export default function WeirdWebOctober() {
                 Words [18/10/2024]
               </span>
             </Link>
-            </li><li className="text-lg font-medium"> <Link href="/data" passHref>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/data" passHref>
               <span
                 className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${textColor}20` }}
@@ -145,7 +165,18 @@ export default function WeirdWebOctober() {
                 Data [19/10/2024]
               </span>
             </Link>
-            </li>
+          </li>
+          <li className="text-lg font-medium">
+            {" "}
+            <Link href="/memes" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                Memes [21/10/2024]
+              </span>
+            </Link>
+          </li>
         </ul>
       </div>
 
