@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const text =
-  "I wish there was a way to know you were in the good old days before you actually left them";
+const text = `"I wish there was a way to know you were in the good old days before you actually left them"`;
 const words = text.split(" ");
 
 const images = [
@@ -34,24 +33,19 @@ const images = [
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-21%20at%2011.49.26%E2%80%AFPM-dpX6QXNFKSrGcAnoIm0It00zyh9IYS.png",
-    alt: "Two people standing together",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-21%20at%2011.39.59%E2%80%AFPM-Hy9Gu5Ue5Ue5Ue5Ue5Ue5Ue5Ue5U.png",
-    alt: "Project Function team",
+    alt: "standing together",
   },
 ];
 
 const positions = [
-  "top-4 left-4",
-  "top-4 right-4",
-  "bottom-4 left-4",
-  "bottom-4 right-4",
-  "top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2",
-  "top-1/4 right-1/4 translate-x-1/2 -translate-y-1/2",
-  "bottom-1/4 left-1/4 -translate-x-1/2 translate-y-1/2",
-  "bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2",
-  "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+  "top-0 left-0",
+  "top-0 right-0",
+  "bottom-0 left-0",
+  "bottom-0 right-0",
+  "top-0 left-0",
+  "top-1/4 right-1/4 translate-x-[65%] -translate-y-[65%]",
+  "bottom-1/4 left-1/4 -translate-x-[65%] translate-y-[65%]",
+  "bottom-1/4 right-1/4 translate-x-[65%] translate-y-[65%]",
 ];
 
 export default function AnimatedTextWithBackground() {
@@ -88,21 +82,23 @@ export default function AnimatedTextWithBackground() {
         } else {
           clearInterval(intervalId);
         }
-      }, 300);
+      }, 200);
 
       return () => clearInterval(intervalId);
     }
   }, [textAnimationComplete]);
 
   return (
-    <div className="relative min-h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
+    <div className="relative h-screen bg-black flex items-center justify-center p-4 overflow-hidden">
       {textAnimationComplete &&
         images.map((image, index) => (
           <div
             key={index}
             className={`absolute w-48 h-48 transition-all duration-300 ease-in-out ${
-              positions[index]
-            } ${visibleImages.includes(index) ? "opacity-100" : "opacity-0"}`}
+              index === 4 ? "top-2 left-2" : positions[index]
+            } ${
+              visibleImages.includes(index) ? "opacity-100" : "opacity-0"
+            } animate-float`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -119,9 +115,9 @@ export default function AnimatedTextWithBackground() {
             />
           </div>
         ))}
-      <div className="relative z-10 w-full max-w-5xl text-center my-24">
+      <div className="relative z-10 w-full max-w-5xl text-center">
         {fontLoaded && (
-          <p className="text-[2.6rem] md:text-[3.9rem] lg:text-[5.2rem] text-white leading-relaxed font-['Eagle_Lake',cursive] mix-blend-difference">
+          <p className="text-[1.5rem] md:text-[2.25rem] lg:text-[3rem] text-white leading-relaxed font-['Eagle_Lake',cursive] mix-blend-difference">
             {words.map((word, wordIndex) => (
               <span
                 key={wordIndex}
@@ -158,6 +154,18 @@ export default function AnimatedTextWithBackground() {
         }
         .animate-write {
           animation: write 0.3s ease-out;
+        }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-11px);
+          }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </div>
