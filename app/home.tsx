@@ -176,6 +176,16 @@ export default function WeirdWebOctober() {
                 Memes [21/10/2024]
               </span>
             </Link>
+          </li><li className="text-lg font-medium">
+            {" "}
+            <Link href="/bugs" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                Bugs [22/10/2024]
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
