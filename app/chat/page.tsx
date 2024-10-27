@@ -6,6 +6,7 @@ import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import { VT323 } from 'next/font/google'
 
+
 const vt323 = VT323({ weight: '400', subsets: ['latin'] })
 
 export default function Component() {
@@ -19,12 +20,10 @@ export default function Component() {
   const startTimeRef = useRef<number | null>(null)
 
   const keys = [
-    ...'QWERTYUIOP',
-    ...'ASDFGHJKL',
-    ...'ZXCVBNM',
-    'Backspace',
-    'Enter',
-    'Space'
+    'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
+    'Z', 'X', 'C', 'V', 'B', 'N', 'M',
+    'Backspace', 'Enter', 'Space'
   ]
 
   const showToast = useCallback((message: string) => {
@@ -107,8 +106,7 @@ export default function Component() {
   if (!isReady) {
     return (
       <div className="h-screen bg-black text-[#FFFDE7] flex flex-col items-center justify-center p-4">
-       
-<div className="text-center mb-8">
+       <div className="text-center mb-8">
           <p className={`${vt323.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed`}>
             Words carry weight.
             <br />
