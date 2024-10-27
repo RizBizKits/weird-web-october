@@ -196,6 +196,16 @@ export default function WeirdWebOctober() {
                 Interactive [25/10/2024]
               </span>
             </Link>
+          </li><li className="text-lg font-medium">
+            {" "}
+            <Link href="/chat" passHref>
+              <span
+                className="px-3 py-1 rounded-full inline-block hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: `${textColor}20` }}
+              >
+                Chat [26/10/2024]
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
