@@ -108,6 +108,7 @@ export default function Component() {
               msUserSelect: 'none',
               userSelect: 'none',
               touchAction: 'manipulation',
+              cursor: 'pointer',
             }}
           >
             <Image
